@@ -6,6 +6,7 @@ import com.luxoft.pikuza.repository.NetworkRepository;
 import com.luxoft.pikuza.services.NetworkService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.util.List;
 
@@ -52,5 +53,16 @@ public class NetworkServiceImpl implements NetworkService {
         catch (Exception ex){
             throw new CustomExceptions("Children is not exist");
         }
+    }
+    
+     @Override
+    public void deleteNetworkByID(String id) throws CustomExceptions {
+        if(!StringUtils.isEmpty(id)) {
+            Network network = networkRepository.findOneById(id);
+            if (network != null)
+                networkRepository.deleteById(id);
+        }
+        else
+            throw new CustomExceptions("Network id is empty or id is not correct");
     }
 }
