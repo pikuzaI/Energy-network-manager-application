@@ -51,4 +51,10 @@ public class NetworkController {
     public ResponseEntity<?> findByChildNode(@RequestParam("child") List<Network> list) throws CustomExceptions {
         return new ResponseEntity<>(networkService.findByChildNode(list),HttpStatus.OK);
     }
+    
+    @DeleteMapping("/deleteNetwork/{id}")
+    public ResponseEntity<?> deleteNetworkByID(@PathVariable("id") String id) throws CustomExceptions {
+        networkService.deleteNetworkByID(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }
