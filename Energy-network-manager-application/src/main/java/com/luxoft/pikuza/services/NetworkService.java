@@ -13,4 +13,6 @@ public interface NetworkService {
     void saveNetwork(Network network) throws CustomExceptions;
 
     Network findByChildNode(List<Network> networkList) throws CustomExceptions;
+    
+    void deleteNetworkByID(String id) throws CustomExceptions;
 }
