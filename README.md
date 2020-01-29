@@ -22,6 +22,8 @@ children(List<Network>)
   
 localhost:8080/findByChildNode - find network by child(params -
 child (List<Network>))
+	
+localhost:8080/deleteNetwork/{id} - delete network by id
   
 DESCRIPTION
 1. Implement Network model in Java (all information provided in Network model description)
