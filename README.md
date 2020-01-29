@@ -1,5 +1,6 @@
 # Energy-network-manager-application
 Software that allows execute CRUD operations on hierarchical structure which represents Simple Network Model.
+Database - MongoDB
 
 localhost:8080/allNetworks - list of all networks
 
